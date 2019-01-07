@@ -17,10 +17,7 @@
   <script type="text/javascript" src="../../ckeditor/ckeditor.js"></script>
   <script type="text/javascript" src="../../ckfinder/ckfinder.js"></script>
   <style type="text/css">
-        #gioithieu{
-    background-color: #eee;
-    color: #23527c;
-  }
+      
   </style>
   <script>
 	new WOW().init();
@@ -33,7 +30,7 @@
    
    ?>
     
-<div class="container-fluid" class="container" style="width: 852px; position: relative; left: 153px;margin-top: 20px;">
+<div class="container-fluid" class="container" style="width: 852px; position: relative; left: 153px;">
     <center>
         <div class="page-header" > 
         <h1><label data-wow-duration="1s" data-wow-delay="0s" data-wow-iteration="1" class=" wow zoomInLeft"  style="color: #b92c28;">
@@ -44,27 +41,27 @@
 
     <div class="col-sm-4 col-md-4">
         <img class="wow zoomInLeft img-thumbnail" 
-             style="margin: 10px 0px;
+             style="margin: 10px 0px; width: 245px; height: 320px;
              box-shadow: 5px 5px 5px; 
              -moz-box-shadow: 5px 5px 5px;
                 -webkit-box-shadow: 5px 5px 5px;
                 -o-box-shadow: 5px 5px 5px;
                 -ms-box-shadow: 5px 5px 5px;" 
-                src="../upload/gioithieu/img1.jpg" data-wow-duration="1.5s" data-wow-delay="1.5s" data-wow-iteration="1" />
+                src="../../upload/gioithieu/bac-sy-benh-vien-thu-y-New-Pet-Hospital-2-thuc-tap-tai-Nhat-Ban.jpg" data-wow-duration="1.5s" data-wow-delay="1.5s" data-wow-iteration="1" />
         <img class="wow zoomInLeft img-thumbnail" 
-             style="margin: 10px 0px; 
+             style="margin: 10px 0px; width: 245px; height: 320px; 
              box-shadow: 5px 5px 5px; 
              -moz-box-shadow: 5px 5px 5px;
                 -webkit-box-shadow: 5px 5px 5px;
                 -o-box-shadow: 5px 5px 5px;
-                -ms-box-shadow: 5px 5px 5px;" src="../upload/gioithieu/img2.jpg"  data-wow-duration="1.5s" data-wow-delay="1.5s" data-wow-iteration="1" />
+                -ms-box-shadow: 5px 5px 5px;" src="../../upload/gioithieu/cat_tia_cao_long_tham_my_tai_benh_vien_thu_y_phong_kham_thu_y_New_Pet_Hospital_1.jpg"  data-wow-duration="1.5s" data-wow-delay="1.5s" data-wow-iteration="1" />
         <img class="wow zoomInLeft img-thumbnail"
-             style="margin: 10px 0px;
+             style="margin: 10px 0px; width: 245px; height: 320px;
              box-shadow: 5px 5px 5px; 
              -moz-box-shadow: 5px 5px 5px;
                 -webkit-box-shadow: 5px 5px 5px;
                 -o-box-shadow: 5px 5px 5px;
-                -ms-box-shadow: 5px 5px 5px;" src="../upload/gioithieu/img3.jpg"  data-wow-duration="1.5s" data-wow-delay="1.5s" data-wow-iteration="1" />
+                -ms-box-shadow: 5px 5px 5px;" src="../../upload/gioithieu/cat_tia_cao_long_tham_my_tai_benh_vien_thu_y_phong_kham_thu_y_New_Pet_Hospital_1_3.jpg"  data-wow-duration="1.5s" data-wow-delay="1.5s" data-wow-iteration="1" />
     </div>
     <div  class="col-sm-8 col-md-8" >
               
@@ -98,7 +95,7 @@
                        
                     </P>
                 </div>
-        <a class="col-md-12 col-sm-12" href="index.php?page=suagioithieu&&id=<?php echo $dong["id"] ?>&&title=gioithieu"><button type="submit" class="btn btn-danger">Update</button></a>
+        <a class="col-md-12 col-sm-12" href="index.php?page=suagioithieu&&id=<?php echo $dong["id"] ?>"><button type="submit" class="btn btn-danger">Update</button></a>
        <?php
         }
        ?>

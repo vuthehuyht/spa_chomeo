@@ -21,10 +21,6 @@
           margin-left: 200px;
           margin-top: 100px;
       }
-        #dichvu{
-    background-color: #eee;
-    color: #23527c;
-  }
   </style>
   <script>
 	new WOW().init();
@@ -41,8 +37,8 @@
                 ?> 
                 <div style="padding-bottom: 5px; font-size: 20px;">
                     <span class="glyphicon glyphicon-pencil"  style="font-size: 15px; color:indigo;"></span>
-                    <a  id="dichvu" style="color: black; text-decoration: none;" href='index.php?page=sua_dichvu&&id=<?php echo $row["id_service"]?>&&title=dichvu'><?php echo $row['name_service']?></a>
-                    <button class="btn btn-danger" type="button" onclick="Delete(<?php echo $row['id_service']?>)">
+                    <a  id="dichvu" style="color: black; text-decoration: none;" href='index.php?page=sua_dichvu&&id=<?php echo $row["id_service"]?>'><?php echo $row['name_service']?></a>
+                    <button class="btn-danger" type="button" onclick="Delete(<?php echo $row['id_service']?>)">
                         Delete
                     </button>
                     <dialog id="delete<?php echo $row['id_service']?>">
@@ -96,7 +92,7 @@
             $kt= mysqli_query($conn, $sql);
     ?>
     <script type="text/javascript">
-        window.location = "index.php?page=dichvu&&title=dichvu";
+        window.location = "http://localhost/Spa_ChoMeo/admin/index.php?page=dichvu&&tieude=dichvu";
 	alert("Thêm dịch vụ thành công.");
 </script>
     <?php

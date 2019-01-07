@@ -8,7 +8,7 @@ session_start();
 	<title></title>
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="library/animate_css/animate.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -109,147 +109,123 @@ while ($row = mysqli_fetch_array($kt)) {
 <body>
 	<?php 
 	if (isset($_SESSION['admin']) && $_SESSION['admin']){?>
-		<div class="container-fluid">
-			<nav class="navbar navbar-default fix nav-kill"  role="navigation">
-				<div class="container-fluid" style="background-color: #23282d">
-					<!-- Collect the nav links, forms, and other content for toggling -->
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-					</div>
-					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-						<ul class="nav navbar-nav">
-							<li><a style="color: #FFFFFF" target="_blank" href="../index.php">Trang chủ/SPa Chó Mèo</a></li>
-							<li>
-								<?php
-								if($_GET['title'] == 'home'){
+	<div class="container-fluid">
+		<nav class="navbar navbar-default fix nav-kill"  role="navigation">
+			<div class="container-fluid" style="background-color: #23282d">
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse col-sm-2 col-md-2" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li><a style="color: #FFFFFF" href="../index.php">Trang chủ/SPa Chó Mèo</a></li>
+						<li>
+							<?php
+							if(isset($_GET['tieude']) == 'home'){
 									echo '<span class="glyphicon glyphicon-home" style="padding-top:15px;color: #FFFFFF"></span><span style="padding-top:15px;color: #FFFFFF">   Trang chủ</span>';
 								}
-								if($_GET['title'] == 'news'){
+								if(isset($_GET['tieude']) == 'tintuc'){
 									echo '<span class="glyphicon glyphicon-pencil" style="padding-top:15px;color: #FFFFFF"></span><span style="padding-top:15px;color: #FFFFFF">   Quản lý tin tức</span>';
 								}
-								if($_GET['title'] == 'lienhe'){
-									echo '<span class="glyphicon glyphicon-earphone" style="padding-top:15px;color: #FFFFFF"></span><span style="padding-top:15px;color: #FFFFFF">   Quản lý liên hệ</span>';
+								else if(isset($_GET['tieude']) == 'lienhe'){
+									echo '<span class="glyphicon glyphicon-earphone" style="padding-top:15px;color: #FFFFFF"></span><span style="padding-top:15px;color: #FFFFFF">   Quản lý tin tức</span>';
 								}
-								if($_GET['title'] == 'taikhoan'){
-									echo '<span class="glyphicon glyphicon-lock" style="padding-top:15px;color: #FFFFFF"></span><span style="padding-top:15px;color: #FFFFFF">   Quản lý tài khoản</span>';
+                                                                else if(isset($_GET['tieude']) == 'gioithieu'){
+									echo '<span class="glyphicon glyphicon-earphone" style="padding-top:15px;color: #FFFFFF"></span><span style="padding-top:15px;color: #FFFFFF">   Quản lý giới thiệu</span>';
 								}
-								if($_GET['title'] == 'dichvu'){
+                                                                else if(isset($_GET['tieude']) == 'dichvu'){
 									echo '<span class="glyphicon glyphicon-earphone" style="padding-top:15px;color: #FFFFFF"></span><span style="padding-top:15px;color: #FFFFFF">   Quản lý dịch vụ</span>';
 								}
-								if($_GET['title'] == 'product'){
-									echo '<span class="glyphicon glyphicon-tags" style="padding-top:15px;color: #FFFFFF"></span><span style="padding-top:15px;color: #FFFFFF">   Quản lý sản phẩm</span>';
-								}
 								?>	
-							</li>
-						</ul>
-						<ul class="nav navbar-nav navbar-right">
-							<li><a style="color: #FFFFFF" href="#"><?php echo $name; ?></a></li>
-						</ul>
-					</div><!-- /.navbar-collapse -->
-				</div><!-- /.container-fluid -->
-			</nav>
-			<div class="glyphicon glyphicon-chevron-right" style="position: absolute;top: 500px;left: 0px"></div>
-			<div class="list-group col-xs-6 col-sm-4 fix1 nav-kill1" style="background-color: #32373c;height:660px;width: 200px">
-				<ul class="nav nav-pills nav-stacked" style="width: 200px;">
-					<li class="active" style="border: 0px;"><a class="link" href="#"><span class=""></span> Danh mục</a></li>
-					<li><a class="link" id='home' href="index.php?page=home&&title=home"><span class="glyphicon glyphicon-home"></span> Trang chủ</a></li>
-					<li><a class="link"  id='news' href="index.php?page=news&&title=news"><span class="glyphicon glyphicon-pencil"></span> Quản lý tin tức</a></li>
-					<li><a class="link" id='product' href="index.php?page=product&&title=product"><span class="glyphicon glyphicon-tags"></span> Quản lý sản phẩm</a></li>
-					<li><a class="link" id='lienhe' href="index.php?page=lienhe&&title=lienhe"><span class="glyphicon glyphicon-earphone"></span> Quản lý liên hệ</a></li>
-					<li><a class="link" id='gioithieu' href="index.php?page=gioithieu&&title=tintuc"><span class="glyphicon glyphicon-glyphicon glyphicon-pushpin"></span> Quản lý giới thiệu</a></li>
-					<li><a class="link" id='dichvu' href="index.php?page=dichvu&&title=dichvu"><span class="glyphicon glyphicon-glyphicon glyphicon-tasks"></span> Quản lý dịch vụ</a></li>
-					<li><a class="link" id='taikhoan' href="index.php?page=quanly_dichvu&&title=dichvu"><span class="glyphicon glyphicon-tasks"></span>Quản lý đăng ký dịch vụ</a></li>
-					<li><a class="link" id='donhang' href="index.php?page=donhang&&title=donhang"><span class="glyphicon glyphicon-shopping-cart"></span> Quản lý đơn hàng</a></li>
-					<li><a class="link" id='khachhang' href="index.php?page=khachhang&&title=khachhang"><span class="glyphicon glyphicon-lock"></span> Khách hàng</a></li>
-					<li><a class="link" id='taikhoan' href="index.php?page=taikhoan&&title=taikhoan"><span class="glyphicon glyphicon-user"></span> Quản lý tài khoản</a></li>
-					<li><a class="link" id='taikhoan' href="index.php?page=taikhoan&&title=taikhoan"><span class="glyphicon glyphicon-plus"></span>Thêm tài khoản admin</a></li>
-					<li><a class="link" id='taikhoan' href="index.php?page=taikhoan&&title=taikhoan"><span class="glyphicon glyphicon-stats"></span>Thống kê doanh thu</a></li>
-				</ul>
-			</div>
-			<div class="container">
-				<?php 
-				if(isset($_GET["page"])){					$page = $_GET["page"];
-					switch($page){
-						case "news":
-						require_once("pages/news.php");
-						break;
-						case "khachhang":
-						require_once("pages/khachhang.php");
-						break;
-						case "home":
-						require_once("pages/home.php");
-						break;
-						case "logout":
-						require_once("pages/logout.php");
-						break;
-						default;
-						case "add_news":
-						require_once("pages/add_news.php");
-						break;
-						case "update_new":
-						require_once("pages/suatintuc.php");
-						break;
-						case "delete_news":
-						require_once("pages/xoatintuc.php");
-						break;
-						case "gioithieu":
-						require_once("pages/gioithieu.php");
-						break;
-						case "lienhe":
-						require_once("pages/lienhe.php");
-						break;
-						case "dichvu":
-						require_once("pages/dichvu.php");
-						break;
-						case "xoa_dichvu":
-						require_once("pages/xoa_dichvu.php");
-						break;
-						case "sua_dichvu":
-						require_once("pages/sua_dichvu.php");
-						break;
-						case "suagioithieu":
-						require_once("pages/suagioithieu.php");
-						break;
-						case "sua_gioithieu":
-						require_once("pages/sua_gioithieu.php");
-						break;
-						case "product":
-						require_once("pages/product.php");
-						break;
-						case "add_product":
-						require_once("pages/add_product.php");
-						break;
-						case "update_product":
-						require_once("pages/update_product.php");
-						break;
-						case "quanly_dichvu":
-						require_once("pages/quanly_dichvu.php");
-						break;
-						case "xuly_dichvu":
-						require_once("pages/xuly_dichvu.php");
-						break;
-						case "xoa_quanly_dichvu":
-						require_once("pages/xoa_quanly_dichvu.php");
-						break;
-						require_once("pages/home.php");
-					}
-				}
-				else{
-					header('location:index.php?page=home&&title=home');
-				}
-				?>
-			</div>
+						</li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a style="color: #FFFFFF" href="#"><?php echo $name; ?></a></li>
+					</ul>
+				</div><!-- /.navbar-collapse -->
+			</div><!-- /.container-fluid -->
+		</nav>
+		<div class="glyphicon glyphicon-chevron-right" style="position: absolute;top: 500px;left: 0px"></div>
+		<div class="list-group col-sm-2 col-md-2 fix1 nav-kill1" style="background-color: #32373c;height:660px;width: 200px">
+			<ul class="nav nav-pills nav-stacked">
+				<li class="active" style="border: 0px;"><a class="link" href="#"><span class=""></span> Danh mục</a></li>
+				<li><a class="link" id='home' href="index.php?page=home&&tieude=home"><span class="glyphicon glyphicon-home"></span> Trang chủ</a></li>
+				<li><a class="link"  id='tintuc' href="index.php?page=tintuc&&tieude=tintuc"><span class="glyphicon glyphicon-pencil"></span> Quản lý tin tức</a></li>
+				<li><a class="link" id='sanpham' href="index.php?page=hienthi&&tieude=hienthi"><span class="glyphicon glyphicon-tags"></span> Quản lý sản phẩm</a></li>
+				<li><a class="link" id='lienhe' href="index.php?page=lienhe&&tieude=lienhe"><span class="glyphicon glyphicon-earphone"></span> Quản lý liên hệ</a></li>
+				<li><a class="link" id='gioithieu' href="index.php?page=gioithieu&&tieude=gioithieu"><span class="glyphicon glyphicon-earphone"></span> Quản lý giới thiệu</a></li>
+                                <li><a class="link" id='gioithieu' href="index.php?page=dichvu&&tieude=dichvu"><span class="glyphicon glyphicon-earphone"></span> Quản lý dịch vụ</a></li>
+				<li><a class="link" id='donhang' href="index.php?page=donhang&&tieude=donhang"><span class="glyphicon glyphicon-shopping-cart"></span> Quản lý đơn hàng</a></li>
+				<li><a class="link" id='khachhang' href="index.php?page=khachhang&&tieude=khachhang"><span class="glyphicon glyphicon-lock"></span> Khách hàng</a></li>
+				<li><a class="link" id='taikhoan' href="index.php?page=taikhoan&&tieude=taikhoan"><span class="glyphicon glyphicon-user"></span> Quản lý tài khoản</a></li>
+				<li><a class="link" id='taikhoan' href="index.php?page=taikhoan&&tieude=taikhoan"><span class="glyphicon glyphicon-plus"></span>Thêm tài khoản admin</a></li>
+			</ul>
 		</div>
-		<?php
-	}else{
-		header('location:index.php');
-	} 
-	ob_flush();
-	?>
+		<div class="col-md-10 col-sm-10" style="">
+			<?php 
+			if(isset($_GET["page"])){
+				$page = $_GET["page"];
+				switch($page){
+					case "tintuc":
+					require_once("pages/tintuc.php");
+					break;
+					case "home":
+					require_once("pages/home.php");
+					break;
+					case "logout":
+					require_once("pages/logout.php");
+					break;
+					default;
+					case "addtintuc":
+					require_once("pages/addtintuc.php");
+					break;
+                                        
+					case "suatintuc":
+					require_once("pages/suatintuc.php");
+					break;
+					case "xoatintuc":
+					require_once("pages/xoatintuc.php");
+					break;
+					case "gioithieu":
+					require_once("pages/gioithieu.php");
+					break;
+                                        case "dichvu":
+                                            require_once("pages/dichvu.php");
+                                            break;
+                                        case "xoa_dichvu":
+                                            require_once("pages/xoa_dichvu.php");
+                                            break;
+                                        case "sua_dichvu":
+                                            require_once("pages/sua_dichvu.php");
+                                            break;
+                                        case "suagioithieu":
+                                            require_once("pages/suagioithieu.php");
+                                            break;
+                                        case "sua_gioithieu":
+                                            require_once("pages/sua_gioithieu.php");
+                                            break;
+					case "lienhe":
+					require_once("pages/lienhe.php");
+					break;
+					
+				}
+			}
+			else{
+				header('location:index.php?page=home&&tieude=home');
+			}
+			?>
+		</div>
+	</div>
+	<?php
+}else{
+	header('location:index.php');
+} 
+ob_flush();
+?>
 </body>
 </html>

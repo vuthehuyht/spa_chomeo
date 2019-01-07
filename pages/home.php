@@ -1,4 +1,4 @@
-j<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Trang Chủ</title>
@@ -277,22 +277,36 @@ include 'pages/lienhe.php';
 		<center><div style="height: 1px;background-color: #000;width: 7%;margin-bottom:50px"></div></center>
 	</div>
 	<div class="slider center container-fuild"  role="toolbar">
-		<?php 
-				$sql = "select * from news ORDER BY id_news DESC LIMIT 5";
-				$kt = mysqli_query($conn,$sql);
-				while ($row = mysqli_fetch_array($kt)) {
-					$title = $row["title"];
-					$content = $row["content"];
-					$url_image = $row["url_image"];
-					$time_news =  $row["time_news"];
-		 ?>
 		<div> 
-			<img data-lazy="<?php echo $url_image ?>"  class="img-responsive"  style="height: 220px;width: 100%"/>
-			<center><p style="padding-top: 40px;margin-top:0px;word-wrap: break-word;padding: 20px; "><?php echo $title; ?></p></center>
-			<i style="opacity: 0.6;font-size: 10px;">Tin túc | Ngày <?php echo date($time_news); ?></i></br>
-			<span><?php echo $content ?></span>
+			<img data-lazy="upload/tintuc/banner.jpg"  class="img-responsive" style="height: 200px;"/>
+			<center><p style="padding-top: 40px;margin-top:0px">Mua bán thú nuôi giá rẻ </p></center>
+			<i style="opacity: 0.6;font-size: 10px;">Tin túc | Ngày 26/4/2018</i></br>
+			<span>Hiện nay có rất nhiều địa điểm mua bán thú nuôi...</span>
 		</div>
-		<?php } ?>
+		<div> 
+			<img data-lazy="upload/tintuc/banner.jpg"  class="img-responsive" style="height: 200px;"/>
+			<center><p style="padding-top: 40px;margin-top:0px">Mua bán thú nuôi giá rẻ</p></center>
+			<i style="opacity: 0.6;font-size: 10px;">Tin túc | Ngày 26/4/2018</i></br>
+			<span>Hiện nay có rất nhiều địa điểm mua bán thú nuôi...</span>
+		</div>
+		<div> 
+			<img data-lazy="upload/tintuc/banner.jpg"  class="img-responsive" style="height: 200px;"/>
+			<center><p style="padding-top: 40px;margin-top:0px">Mua bán thú nuôi giá rẻ</p></center>
+			<i style="opacity: 0.6;font-size: 10px;">Tin túc | Ngày 26/4/2018</i></br>
+			<span>Hiện nay có rất nhiều địa điểm mua bán thú nuôi...</span>
+		</div>
+		<div> 
+			<img data-lazy="upload/tintuc/banner.jpg"  class="img-responsive" style="height: 200px;"/>
+			<center><p style="padding-top: 40px;margin-top:0px;">Mua bán thú nuôi giá rẻ</p></center>
+			<i style="opacity: 0.6;font-size: 10px;">Tin túc | Ngày 26/4/2018</i></br>
+			<span>Hiện nay có rất nhiều địa điểm mua bán thú nuôi...</span>
+		</div>
+		<div> 
+			<img data-lazy="upload/tintuc/banner.jpg"  class="img-responsive" style="height: 200px;"/>
+			<center><p style="padding-top: 40px;margin-top:0px">Mua bán thú nuôi giá rẻ</p></center>
+			<i style="opacity: 0.6;font-size: 10px;">Tin túc | Ngày 26/4/2018</i></br>
+			<span>Hiện nay có rất nhiều địa điểm mua bán thú nuôi...</span>
+		</div>
 	</div>
 	<div class="container-fuild" style="background-color: #ecf7f6;margin-top: 50px;">
 		<div class="container">

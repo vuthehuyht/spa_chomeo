@@ -15,10 +15,6 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-	#lienhe{
-		background-color: #eee;
-		color: #23527c;
-	}
 	</style>
 </head>
 <body>

@@ -14,29 +14,14 @@ if(isset($_GET["page"])){
 		case "blog":
 		require_once("pages/blog.php");
 		break;
+                case "gioithieu":
+                    require_once("pages/gioithieu.php");
+                    break;
+                case "dichvu":
+                    require_once("pages/dichvu.php");
+                    break;
 		case "logout":
 		require_once("pages/logout.php");
-		break;
-		case "gioithieu":
-		require_once("pages/gioithieu.php");
-		break;
-		case "dichvu":
-		require_once("pages/dichvu.php");
-		break;
-		case "product":
-		require_once("pages/product.php");
-		break;
-		case "addcart":
-		require_once("pages/addcart.php");
-		break;
-		case "cart":
-		require_once("pages/cart.php");
-		break;
-		case "delete_cart":
-		require_once("pages/delete_cart.php");
-		break;
-		case "donhang":
-		require_once("pages/donhang.php");
 		break;
 		default;
 		require_once("pages/home.php");
